@@ -1,0 +1,27 @@
+package Pattern;
+
+// +Thread safe
+//- perfomance(every time sync)
+
+public class Singleton3 {
+
+
+    private     Singleton3 (){
+
+        System.out.println("Singleton created");
+    }
+
+    private  static Singleton3 instance;
+
+    public  static synchronized Singleton3 getInstance(){
+
+        if (instance==null)
+
+            instance=new Singleton3();
+
+        return instance;
+    }
+
+
+
+}
